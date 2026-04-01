@@ -3,9 +3,9 @@ from app.logger import log_event, configure_logging
 from app.utils import get_request_metadata
 from prometheus_flask_exporter import PrometheusMetrics
 
-metrics = PrometheusMetrics(app)
 app = Flask(__name__)
 app.logger = configure_logging()
+metrics = PrometheusMetrics(app)
 
 @app.route('/health-check')
 def health_check():
